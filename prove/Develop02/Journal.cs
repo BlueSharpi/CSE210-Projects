@@ -1,8 +1,10 @@
-public class Journal {
+public class Journal
+{
     public List<Entry> _entries = new List<Entry>();
-    public Journal() {}
+    public Journal() { }
 
-    public void CreateJournalEntry() {
+    public void CreateJournalEntry()
+    {
         Console.Clear();
         Console.WriteLine("New Entry:");
         Entry _newEntry = new Entry();
@@ -12,29 +14,39 @@ public class Journal {
         _newEntry._response = Console.ReadLine();
         _entries.Add(_newEntry);
     }
-    public void DisplayJournalEntries() {
+    public void DisplayJournalEntries()
+    {
         Console.Clear();
         Console.WriteLine("\n---------- Previous Entries ----------");
-        if (_entries.Count < 1) {Console.WriteLine("\nNothing to Display.");}
-        foreach (Entry entry in _entries) {entry.DisplayEntry();}
+        if (_entries.Count < 1)
+        {
+            Console.WriteLine("\nNothing to Display.");
+        }
+        foreach (Entry entry in _entries)
+        {
+            entry.DisplayEntry();
+        }
         Console.Write("\nPress Enter to return to Menu");
         Console.ReadLine();
     }
-    public void SaveToCSV() {
+    public void SaveToCSV()
+    {
         List<string> record = new List<string>();
-        foreach (Entry entry in _entries) {
+        foreach (Entry entry in _entries)
+        {
             record.Add(entry.FormatEntryForCSV());
         }
         Console.Write("Input file name to save: ");
-        string _fileName = Console.ReadLine()+".csv";
+        string _fileName = Console.ReadLine() + ".csv";
         File.WriteAllLines(_fileName, record);
     }
-    public void LoadFromCSV() {
+    public void LoadFromCSV()
+    {
         Console.Write("Input file name to load: ");
-        string _fileName = Console.ReadLine()+".csv";
+        string _fileName = Console.ReadLine() + ".csv";
 
         List<string> record = System.IO.File.ReadAllLines(_fileName).ToList();
-        foreach (string line in record) 
+        foreach (string line in record)
         {
             string[] splitString = line.Split('|');
             Entry entry = new Entry();
