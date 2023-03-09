@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         bool on = true;
-        bool Loaded = false;
+        bool loaded = false;
         bool saved = true;
         int input;
         Console.WriteLine($"{DateTime.Now.ToString("MM.dd.yyyy")}");
@@ -20,12 +20,13 @@ class Program
             input = int.Parse(Console.ReadLine());
             
             if (input == 1) {
-                if (Loaded == false) {
+                if (loaded == false) {
                     Console.WriteLine("Load a journal first? ( y or n ) ");
                     string load = Console.ReadLine();
-                    if (load == "y") {j.LoadFromCSV(); Loaded = true;}
+                    if (load == "y") {j.LoadFromCSV(); loaded = true;}
                 }
                 j.CreateJournalEntry();
+                loaded = true;
                 saved = false;
             }
             if (input == 2) {
@@ -43,7 +44,7 @@ class Program
                 }
                 j._entries.Clear();
                 j.LoadFromCSV();
-                Loaded = true;
+                loaded = true;
             }
             if (input == 5) {
                 if (saved == false) {

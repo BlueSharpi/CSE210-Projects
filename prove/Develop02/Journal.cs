@@ -26,12 +26,12 @@ public class Journal {
             record.Add(entry.FormatEntryForCSV());
         }
         Console.Write("Input file name to save: ");
-        string _fileName = Console.ReadLine();
+        string _fileName = Console.ReadLine()+".csv";
         File.WriteAllLines(_fileName, record);
     }
     public void LoadFromCSV() {
         Console.Write("Input file name to load: ");
-        string _fileName = Console.ReadLine();
+        string _fileName = Console.ReadLine()+".csv";
 
         List<string> record = System.IO.File.ReadAllLines(_fileName).ToList();
         foreach (string line in record) 
