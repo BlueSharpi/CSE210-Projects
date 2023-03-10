@@ -7,11 +7,11 @@ public class Journal
     {
         Console.Clear();
         Console.WriteLine("New Entry:");
-        Entry _newEntry = new Entry();
-        _newEntry._date = DateTime.Now.ToString("MM.dd.yyyy");
-        _newEntry._prompt = new PromptGenerator().GetRandomPrompt();
-        Console.WriteLine($"{_newEntry._date} \n{_newEntry._prompt}");
-        _newEntry._response = Console.ReadLine();
+        string date = DateTime.Now.ToString("MM.dd.yyyy");
+        string prompt = new PromptGenerator().GetRandomPrompt();
+        Console.WriteLine($"{date} \n{prompt}");
+        string response = Console.ReadLine();
+        Entry _newEntry = new Entry(date, prompt, response);
         _entries.Add(_newEntry);
     }
     public void DisplayJournalEntries()
@@ -49,10 +49,7 @@ public class Journal
         foreach (string line in record)
         {
             string[] splitString = line.Split('|');
-            Entry entry = new Entry();
-            entry._date = splitString[0];
-            entry._prompt = splitString[1];
-            entry._response = splitString[2];
+            Entry entry = new Entry(splitString[0], splitString[1], splitString[2]);
             _entries.Add(entry);
         }
     }
