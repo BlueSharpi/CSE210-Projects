@@ -40,11 +40,13 @@ public class Word
     {
         if (_isHidden == true)
         {
-            return _hiddenValue;
+            string result = _hiddenValue;
+            return result;
         }
         else
         {
-            return _value;
+            string result = _value;
+            return result;
         }
     }
 }
