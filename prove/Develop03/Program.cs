@@ -7,6 +7,7 @@ class Program
         Console.Clear();
         Scripture s;
 
+        //Enter New Scripture
         Console.Write("Add new Scripture? ( y or n ) ");
         string input = Console.ReadLine();
         if (input == "n")
@@ -46,6 +47,9 @@ class Program
         Console.WriteLine("Type 'quit' at any time to exit the program.");
         Console.WriteLine("\nPress Enter to Continue > ");
         Console.ReadLine();
+
+        // In addition to hiding words, the user can also reveal words by
+        // typing any key and then pressing Enter
 
         Console.Clear();
         s.DisplayScripture();
