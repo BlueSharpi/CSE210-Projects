@@ -47,7 +47,7 @@ class Program
                 {
                     on = false;
                     Console.Clear();
-                    Console.WriteLine("Please come again soon!");
+                    Console.WriteLine("Come back again soon!");
                     Thread.Sleep(2000);
                     Console.WriteLine("Goodbye!");
                     Thread.Sleep(1000);

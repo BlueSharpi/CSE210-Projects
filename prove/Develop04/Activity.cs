@@ -46,7 +46,7 @@ public class Activity
     {
         DateTime stopTime = DateTime.Now.AddSeconds(seconds);
         while (DateTime.Now < stopTime)
-        {   
+        {
             for (int s = seconds; s > 0; s--)
             {
                 Console.Write($"\r     | {s} |     ");
@@ -73,7 +73,7 @@ public class Activity
         }
     }
     public void WaitAnimation(int seconds, string s)
-    {   
+    {
         Console.Write($"{s}    ");
         DateTime stopTime = DateTime.Now.AddSeconds(seconds);
         while (DateTime.Now < stopTime)

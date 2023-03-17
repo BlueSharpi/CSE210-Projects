@@ -9,7 +9,7 @@ public class ListingActivity : Activity
         "Who are some of your personal heroes?"
     };
 
-    public ListingActivity(string activityName, string description) : base(activityName, description) {}
+    public ListingActivity(string activityName, string description) : base(activityName, description) { }
 
     public void List()
     {

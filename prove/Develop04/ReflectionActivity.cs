@@ -19,8 +19,8 @@ public class ReflectionAvtivity : Activity
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?"
     };
-    
-    public ReflectionAvtivity(string activityName, string description) : base(activityName, description) {}
+
+    public ReflectionAvtivity(string activityName, string description) : base(activityName, description) { }
 
     public void Reflect()
     {
@@ -33,7 +33,7 @@ public class ReflectionAvtivity : Activity
         {
             Console.Clear();
             Console.WriteLine(prompt);
-            Console.WriteLine("\n"+ GetRandomPrompt(_questionList));
+            Console.WriteLine("\n" + GetRandomPrompt(_questionList));
             WaitAnimation(6, "");
         }
 
