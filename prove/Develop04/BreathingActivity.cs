@@ -7,18 +7,21 @@ public class BreathingActivity : Activity
 
     public void Breathe()
     {
-        StartMessage();
+        StartMessage("It's time to clear your mind and focus on your breathing.");
 
         DateTime endActivity = DateTime.Now.AddSeconds(_duration);
         while (DateTime.Now < endActivity)
         {
-            Console.WriteLine("  Breathe in...");
+            Console.WriteLine("    Breathe in...");
             CountdownAnimation(4);
             Console.Clear();
-            Console.WriteLine("  Hold it...");
+            Console.WriteLine("    Hold it...");
             CountdownAnimation(4);
             Console.Clear();
-            Console.WriteLine("  Breathe Out...");
+            Console.WriteLine("    Breathe Out...");
+            CountdownAnimation(4);
+            Console.Clear();
+            Console.WriteLine("    Hold it...");
             CountdownAnimation(4);
             Console.Clear();
         }
