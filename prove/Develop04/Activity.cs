@@ -13,22 +13,29 @@ public class Activity
     public void StartMessage(string message)
     {
         Console.Clear();
+        Console.Write("\nHow long would you like your session to last (in seconds)? ");
+        _duration = int.Parse(Console.ReadLine());
+        Console.Clear();
+        Thread.Sleep(1500);
         Console.Write($"Welcome to the {_activityName}. ");
         Thread.Sleep(1500);
         Console.Write($"\n\n{_description} ");
         Thread.Sleep(1500);
-        Console.Write("\n\nHow long would you like your session to last (in seconds)? ");
-        _duration = int.Parse(Console.ReadLine());
+        Console.Write("\n\nContinue > ");
+        Console.ReadLine();
         Console.Clear();
-        WaitAnimation(1, message);
-        WaitAnimation(4, "\nGet Ready");
+        WaitAnimation(2, message);
+        WaitAnimation(3, "\nAre you ready? ");
+        Console.Write("\nBegin!");
+        Thread.Sleep(1000);
         Console.Clear();
     }
     public void EndMessage()
     {
+        Console.Clear();
         WaitAnimation(5, "Winding down");
         Console.Clear();
-        Console.WriteLine("\nWell done!!");
+        Console.WriteLine("Well done!!");
         Thread.Sleep(1500);
         Console.WriteLine($"\nYou have completed {_duration} seconds of the {_activityName}.\n");
         Thread.Sleep(1500);
@@ -42,25 +49,25 @@ public class Activity
         {   
             for (int s = seconds; s > 0; s--)
             {
-                Console.Write($"\r    (] - {s} - [)    ");
+                Console.Write($"\r     | {s} |     ");
                 Thread.Sleep(450);
-                Console.Write($"\r    O( - {s} - )O    ");
+                Console.Write($"\r     (({s}))     ");
                 Thread.Sleep(25);
-                Console.Write($"\r   O ( - {s} - ) O   ");
+                Console.Write($"\r   O(-   -)O   ");
                 Thread.Sleep(25);
-                Console.Write($"\r  O  ( - {s} - )  O  ");
+                Console.Write($"\r  O-       -O  ");
                 Thread.Sleep(50);
-                Console.Write($"\r O   ( - {s} - )   O ");
+                Console.Write($"\r O-         -O ");
                 Thread.Sleep(100);
-                Console.Write($"\rO    ( - {s} - )    O");
+                Console.Write($"\rO             O");
                 Thread.Sleep(150);
-                Console.Write($"\r O   ( - {s} - )   O ");
+                Console.Write($"\r O           O ");
                 Thread.Sleep(100);
-                Console.Write($"\r  O  ( - {s} - )  O  ");
+                Console.Write($"\r  -O       O-  ");
                 Thread.Sleep(50);
-                Console.Write($"\r   O ( - {s} - ) O   ");
+                Console.Write($"\r   -)O   O(-   ");
                 Thread.Sleep(25);
-                Console.Write($"\r    O( - {s} - )O    ");
+                Console.Write($"\r    -)({s})(-    ");
                 Thread.Sleep(25);
             }
         }
@@ -85,9 +92,9 @@ public class Activity
             Thread.Sleep(500);
         }
     }
-    public string GetRandomPrompt(List<string> promptList)
+    public string GetRandomPrompt(string[] promptList)
     {
-        int r = new Random().Next(0, promptList.Count);
-        return promptList[0];
+        int r = new Random().Next(0, promptList.Length);
+        return promptList[r];
     }
 }

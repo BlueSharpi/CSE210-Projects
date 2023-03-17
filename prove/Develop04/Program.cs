@@ -7,6 +7,9 @@ class Program
         Console.WriteLine("Hello Develop04 World!");
 
         BreathingActivity b1 = new BreathingActivity("Breathing Activity", "\"Box breathing, also referred to as square breathing, is \na deep breathing technique that can help you slow down \nyour breathing. It works by distracting your mind \nas you count to 4, calming your nervous system, and \ndecreasing stress in your body.\" \n-https://www.webmd.com/balance/what-is-box-breathing \n\nTo perform this technique, you inhale for the count of 4, \nhold that breath for 4 seconds, exhale for 4 seconds, and hold it again.");
+        ReflectionAvtivity r1 = new ReflectionAvtivity("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+        ListingActivity l1 = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+
         DisplayMenu();
 
         void DisplayMenu()
@@ -34,11 +37,11 @@ class Program
                 }
                 if (userInput == 2)
                 {
-
+                    r1.Reflect();
                 }
                 if (userInput == 3)
                 {
-
+                    l1.List();
                 }
                 if (userInput == 4)
                 {
@@ -46,7 +49,7 @@ class Program
                     Console.Clear();
                     Console.WriteLine("Please come again soon!");
                     Thread.Sleep(2000);
-                    Console.WriteLine("Goodbye!\n\n");
+                    Console.WriteLine("Goodbye!");
                     Thread.Sleep(1000);
                 }
 
