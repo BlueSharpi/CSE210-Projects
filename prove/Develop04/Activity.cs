@@ -13,7 +13,7 @@ public class Activity
     public void StartMessage(string message)
     {
         Console.Clear();
-        Console.Write("\nHow long would you like your session to last (in seconds)? ");
+        Console.Write("How long would you like your session to last (in seconds)? ");
         _duration = int.Parse(Console.ReadLine());
         Console.Clear();
         Thread.Sleep(1500);
@@ -26,7 +26,9 @@ public class Activity
         Console.Clear();
         WaitAnimation(2, message);
         WaitAnimation(3, "\nAre you ready? ");
-        Console.Write("\nBegin!");
+        Console.WriteLine();
+        CountdownAnimation(3);
+        Console.Write("\r    Begin!     ");
         Thread.Sleep(1000);
         Console.Clear();
     }

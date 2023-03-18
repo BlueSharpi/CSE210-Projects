@@ -16,9 +16,8 @@ public class ListingActivity : Activity
         StartMessage("Get ready to type! ");
 
         string prompt = GetRandomPrompt(_promptList);
-        Console.WriteLine("Question: " + prompt + "\n\n\n");
-        Thread.Sleep(2000);
-        CountdownAnimation(5);
+        Console.WriteLine("Question: " + prompt +"\n");
+        CountdownAnimation(9);
         Console.Clear();
         Console.WriteLine("Question: " + prompt + "\nType! \n");
         DateTime endActivity = DateTime.Now.AddSeconds(_duration);
