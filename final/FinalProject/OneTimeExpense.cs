@@ -15,7 +15,7 @@ public class OneTimeExpense : Expense
         _expenseType = "OneTime";
         FormatExpenseData();
     }
-    
+
     // Methods
     public override void FormatExpenseData()
     {

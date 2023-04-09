@@ -98,7 +98,7 @@ public class Menu
         }
         if (transactionHistory.Count > 0)
         {
-            foreach (Expense transaction in transactionHistory) 
+            foreach (Expense transaction in transactionHistory)
             {
                 i += 1;
                 Console.WriteLine(i + ". " + transaction.GetTitle() + " : -$" + transaction.GetAmount());
@@ -117,7 +117,7 @@ public class Menu
         }
         if (budgets.Count > 0)
         {
-            foreach (Budget budget in budgets) 
+            foreach (Budget budget in budgets)
             {
                 budget.CalculateAmountSpent(expenseHistory);
                 i += 1;
